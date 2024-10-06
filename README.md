@@ -1,7 +1,7 @@
 # Medicare Reminder API
-This is a RESTful API developed with PHP that enables doctors to manage patient prescriptions efficiently. Doctors can perform full CRUD (Create, Read, Update, Delete) operations on medications, including adding new prescriptions, modifying details, or removing them as needed. Patients can view their prescriptions and track the medications prescribed by doctors, creating a simple yet powerful system for medication management.
+This is a RESTful API developed with Lavarel that enables doctors to manage patient prescriptions efficiently. Doctors can perform full CRUD (Create, Read, Update, Delete) operations on medications, including adding new prescriptions, modifying details, or removing them as needed. Patients can view their prescriptions and track the medications prescribed by doctors, creating a simple yet powerful system for medication management.
 
-![PHP Logo](https://www.php.net/images/logos/new-php-logo.png)
+![Lavarel Logo](https://avatars.githubusercontent.com/u/958072?v=4&s=160)
 ![MySQL Logo](https://www.mysql.com/common/logos/logo-mysql-170x115.png)
 
 ## Disclaimer  
