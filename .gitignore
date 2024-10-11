@@ -1,0 +1,51 @@
+# Environment files
+*.env
+.env.*
+
+# Composer files
+composer.lock
+vendor/
+
+# Laravel files
+/storage/*.key
+/storage/logs/*.log
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/    
+/storage/framework/testing/ 
+/public/storage/
+
+/bootstrap/cache
+
+# Node files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Database files
+/database/*.sql
+/database/*.sqlite
+
+# Other files
+/.vscode
+/.idea
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+*.bak
+
+# Apache files
+/public/.htaccess
+
+# PHPUnit generated files
+.phpunit.result.cache
+phpunit.xml
+phpunit.xml.dist
+
+/tests/_output
+
+# Other files
+/homestead.log
