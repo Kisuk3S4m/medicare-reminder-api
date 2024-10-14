@@ -3,7 +3,7 @@ name: User story template
 about: 'Templated used to write user story '
 title: ''
 labels: ''
-assignees: ''
+assignees: Kisuk3S4m
 
 ---
 
@@ -12,16 +12,16 @@ assignees: ''
  **So that** [benefit]  
    
  ### Details and Assumptions
-- **API Method**: [GET, POST, PUT, DELETE, etc.]
-- **Endpoint URL**: [/api/resource]
+- **Method**: [GET, POST, PUT, DELETE, etc.]
+- **Endpoint URI**: [/api/resource]
 - **Request body and headers**:
 - **Response body and headers**
- * [document what you know]
+- * [document what you know]
    
- ### Acceptance Criteria  
- 
+ ### Acceptance Criteria   
  ```gherkin
- Given [some context]
- When [certain action is taken]
- Then [the outcome of action is observed]
+Scenario: [Scenario name] [Optional]
+  Given [some context]
+  When [certain action is taken]
+  Then [the outcome of action is observed]
  ```
