@@ -3,17 +3,18 @@ name: PUSH Workflow
 on:
   push:
     branches:
-      ["master"]
+      - master
 
 jobs:
   app-tests:
     runs-on: ubuntu-latest
+    
     services:
       mysql-database:
         image: mysql:latest
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          MYSQL_DATABASE: ${{ env.DB_DATABASE }}
+          MYSQL_DATABASE: ${{ secrets.DB_DATABASE }}
         ports:
           - 3306:3306
         options: >-
@@ -21,6 +22,7 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
+          
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -44,7 +46,7 @@ jobs:
           echo "SESSION_DRIVER=${{ env.SESSION_DRIVER }}" >> .env
           echo "DB_HOST=${{ env.DB_HOST }}" >> .env
           echo "DB_PORT=${{ env.DB_PORT }}" >> .env
-          echo "DB_DATABASE=${{ env.DB_DATABASE }}" >> .env
+          echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
           echo "DB_USERNAME=${{ env.DB_USERNAME }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
