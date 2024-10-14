@@ -11,10 +11,7 @@ class UserFeatureTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @test
-     */
-    public function authenticated_user_can_access_their_own_data()
+    public function test_authenticated_user_can_access_their_own_data()
     {
         // Create a new user
         $user = User::create([
@@ -36,10 +33,7 @@ class UserFeatureTest extends TestCase
         $response->assertJson($user->toArray());
     }
 
-    /**
-     * @test
-     */
-    public function unauthenticated_user_cannot_access_their_own_data()
+    public function test_unauthenticated_user_cannot_access_their_own_data()
     {
         // Make a GET request to the /user endpoint without authentication
         $response = $this-> withoutMiddleware() -> get(route("user.profile"));
