@@ -3,5 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response(
+        "<h1>Welcome to medicare reminder API</h1>",
+        200, [
+            'Content-Type' => "text/html",
+        ]);
 });
