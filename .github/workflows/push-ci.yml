@@ -13,9 +13,9 @@ jobs:
         image: mysql:latest
         env:
           MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          MYSQL_DATABASE: ${{ variable.DB_DATABASE }}
+          MYSQL_DATABASE: ${{ env.DB_DATABASE }}
         ports:
-          - ${{ variable.DB_PORT }}:${{ variable.DB_PORT }}
+          - ${{ env.DB_PORT }}:${{ env.DB_PORT }}
         options: >-
           --health-cmd="mysqladmin ping --silent"
           --health-interval=10s
@@ -38,14 +38,14 @@ jobs:
       - name: Copy .env from secrets
         run: |
           echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
-          echo "APP_ENV=${{ variable.APP_ENV }}" >> .env
-          echo "APP_DEBUG=${{ variable.APP_DEBUG }}" >> .env
-          echo "DB_CONNECTION=${{ variable.DB_CONNECTION }}" >> .env
-          echo "SESSION_DRIVER=${{ variable.SESSION_DRIVER }}" >> .env
-          echo "DB_HOST=${{ variable.DB_HOST }}" >> .env
-          echo "DB_PORT=${{ variable.DB_PORT }}" >> .env
-          echo "DB_DATABASE=${{ variable.DB_DATABASE }}" >> .env
-          echo "DB_USERNAME=${{ variable.DB_USERNAME }}" >> .env
+          echo "APP_ENV=${{ env.APP_ENV }}" >> .env
+          echo "APP_DEBUG=${{ env.APP_DEBUG }}" >> .env
+          echo "DB_CONNECTION=${{ env.DB_CONNECTION }}" >> .env
+          echo "SESSION_DRIVER=${{ env.SESSION_DRIVER }}" >> .env
+          echo "DB_HOST=${{ env.DB_HOST }}" >> .env
+          echo "DB_PORT=${{ env.DB_PORT }}" >> .env
+          echo "DB_DATABASE=${{ env.DB_DATABASE }}" >> .env
+          echo "DB_USERNAME=${{ env.DB_USERNAME }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
       - name: Run migrations
