@@ -44,6 +44,11 @@ jobs:
           echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
           echo "DB_USERNAME=${{ env.DB_USERNAME }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+      
+      - name: Ensure bootstrap/cache directory exists
+        run: |
+          mkdir -p bootstrap/cache
+          chmod -R 775 bootstrap/cache
 
       - name: Run migrations
         run: php artisan migrate
