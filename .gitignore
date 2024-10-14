@@ -42,8 +42,6 @@ Thumbs.db
 
 # PHPUnit generated files
 .phpunit.result.cache
-phpunit.xml
-phpunit.xml.dist
 
 /tests/_output
 
