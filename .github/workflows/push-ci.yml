@@ -13,8 +13,8 @@ jobs:
       mysql-database:
         image: mysql:latest
         env:
-          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          MYSQL_DATABASE: ${{ secrets.DB_DATABASE }}
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_database
         ports:
           - 3306:3306
           
@@ -41,9 +41,9 @@ jobs:
           echo "SESSION_DRIVER=${{ env.SESSION_DRIVER }}" >> .env
           echo "DB_HOST=127.0.0.1" >> .env  # Use localhost for the GitHub Actions service
           echo "DB_PORT=3306" >> .env
-          echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+          echo "DB_DATABASE=test_database" >> .env
           echo "DB_USERNAME=root" >> .env
-          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "DB_PASSWORD=root" >> .env
 
       
       - name: Ensure bootstrap/cache directory exists
